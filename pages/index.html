@@ -46,9 +46,9 @@
 		<div class="container body-home">
 			<form>
 				<h2>Bolet&iacute;n Informativo</h2>
-				<label class="lblInput"><input id="name" type="text" placeholder="Nombres *"></label>
-				<label class="lblInput"><input id="surname" type="text" placeholder="Apellidos *"></label>
-				<label class="lblInput"><input id="email" type="email" placeholder="Email *"></label>
+				<label class="lblInput"><input id="name" data-valid="false" type="text" placeholder="Nombres *"></label>
+				<label class="lblInput"><input id="surname" data-valid="false" type="text" placeholder="Apellidos *"></label>
+				<label class="lblInput"><input id="email" data-valid="false" type="email" placeholder="Email *"></label>
 				<input type="checkbox">
 				<label class="check">
 					Deseo recibir informaci&oacute;n sobre productos, noticias y otras actualizaciones.
@@ -78,7 +78,7 @@
 	<footer>
 		<div class="container container-footer">
 			<div class="copyright">
-				<a href="index.html"><img src="assets/Logo-Gloria.png" alt="Logo Gloria footer"></a>
+				<a href="index.html"><img src="../assets/Logo-Gloria.png" alt="Logo Gloria footer"></a>
 				<div>
 					<p>Copyright &copy; Gloria S.A. Todos los Derechos Reservados</p>
 					<ul class="menu-footer"></ul>
@@ -87,6 +87,13 @@
 			<ul class="media"></ul>
 		</div>
 	</footer>
+
+	<div id="modal-confirm">
+		<div>
+			<i class="fa fa-times"></i>
+			<p><i class="fa fa-check"></i><br>&iexcl;Te has suscrito correctamente!</p>
+		</div>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="../js/app.js"></script>

@@ -47,15 +47,41 @@ $(document).ready(function(){
 			if(!regex.test(test)){
 				$('#' + id).siblings('.fa-times').animate({right: '6px'}, 'fast');
 				$('#' + id).siblings('.fa-check').animate({right: '-32px'}, 'fast');
+				$('#' + id).attr('data-valid', false);
 			}
 			else {
 				$('#' + id).siblings('.fa-check').animate({right: '6px'}, 'fast');
 				$('#' + id).siblings('.fa-times').animate({right: '-32px'}, 'fast');
+				$('#' + id).attr('data-valid', true);
 			}
 		}
 		validar(regexNombre, nombre, 'name');
 		validar(regexNombre, apellido, 'surname');
 		validar(regexEmail, email, 'email');
+
+		var formValid = $('.body-home form input[data-valid]');
+		var valid = 0;
+		for(i = 0; i < formValid.length; i++){
+			if($(formValid[i]).attr('data-valid') == 'true'){
+				valid++;
+			}
+		}
+		if(valid == 3){
+			$('#modal-confirm').css('display', 'flex').hide().fadeIn();
+		}
+	});
+
+	$('#modal-confirm .fa-times').click(function(){
+		$('#modal-confirm').fadeOut();
+		$('#name').val('');
+		$('#surname').val('');
+		$('#email').val('');
+		$('.fa-times').animate({right: '-32px'}, 'fast');
+		$('.fa-check').animate({right: '-32px'}, 'fast');
+		$('#contact-name').val('');
+		$('#contact-email').val('');
+		$('#contact-asunto').val('');
+		$('#contact-msg').val('');
 	});
 
 	// Slider del home
@@ -198,5 +224,101 @@ $(document).ready(function(){
 			pointerEvents: 'none'
 		});
 	});
+
+	//mouseover a icono de contacto
+	var icoBall = $('.ico-ball');
+	icoBall.mouseover(function(){
+		$(this).find('.hover-ico').css('top', 0);
+		$(this).find('i:first-child').css('top', '-124px');
+	});
+
+	icoBall.mouseleave(function(){
+		$(this).find('.hover-ico').css('top', '124px');
+		$(this).find('i:first-child').css('top', 0);
+	});
+
+	//Efecto h2
+	var title = $('h2');
+	for(i = 0; i < title.length; i++){
+		$(title[i]).after('<div class="after"></div>');
+	}
+
+	title.mouseover(function(){
+		$(this).css('cursor', 'pointer');
+		$(this).next('.after').animate({width: '200px'}, 'fast');
+	});
+
+	title.mouseleave(function(){
+		$(this).css('cursor', 'default');
+		$(this).next('.after').animate({width: '60px'}, 'fast');
+	});
+
+	// Efecto contenido pestaña nosotros
+	var info = $('#nosotros .info');
+	info.mouseover(function(){
+		$(this).css('box-shadow', 'inset 0px 0px 0px 2px #323F62');
+	});
+
+	info.mouseleave(function(){
+		$(this).css('box-shadow', 'inset 0px 0px 0px 0px #323F62');
+	});
+
+	// Efecto pestaña servicios
+	var servicio = $('#servicios .visita');
+	var news = $('#blog .news');
+	servicio.mouseover(function(){
+		$(this).css('border-color', '#323F62');
+	});
+
+	servicio.mouseleave(function(){
+		$(this).css('border-color', '#ddd');
+	});
+
+	news.mouseover(function(){
+		$(this).css('border-color', '#323F62');
+	});
+
+	news.mouseleave(function(){
+		$(this).css('border-color', '#ddd');
+	});
+
+	// Formulario contacto
+	$('#contacto .submit').click(function(ev){
+		ev.preventDefault();
+
+		var regexNombre = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ\s+]{3,25}$/;
+		var regexEmail = /^([\w_.-])+\@(([\w-])+.)+(\w{2,4})+$/;
+
+		var nombre = $('#contact-name').val();
+		var email = $('#contact-email').val();
+
+		function validar(regex, test, id){
+			if(!regex.test(test)){
+				$('#' + id).siblings('.fa-times').animate({right: '6px'}, 'fast');
+				$('#' + id).siblings('.fa-check').animate({right: '-32px'}, 'fast');
+				$('#' + id).attr('data-valid', false);
+			}
+			else {
+				$('#' + id).siblings('.fa-check').animate({right: '6px'}, 'fast');
+				$('#' + id).siblings('.fa-times').animate({right: '-32px'}, 'fast');
+				$('#' + id).attr('data-valid', true);
+			}
+		}
+		validar(regexNombre, nombre, 'contact-name');
+		validar(regexEmail, email, 'contact-email');
+
+		var formValid = $('#contacto form input[data-valid]');
+		var valid = 0;
+
+		for(i = 0; i < formValid.length; i++){
+			if($(formValid[i]).attr('data-valid') == 'true'){
+				valid++;
+			}
+		}
+		if(valid == 2){
+			$('#modal-confirm').css('display', 'flex').hide().fadeIn();
+		}
+	});
+
 
 });

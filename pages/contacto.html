@@ -38,11 +38,11 @@
 				<form>
 					<h3>Escríbenos un mensaje</h3>
 					<div class="form-name">
-						<input type="text" placeholder="Nombre *">
-						<input type="text" placeholder="E-mail *">
+						<label class="lblInput"><input type="text" data-valid="false" id="contact-name" placeholder="Nombre *"></label>
+						<label class="lblInput"><input type="text" data-valid="false" id="contact-email" placeholder="E-mail *"></label>
 					</div>
-					<input type="text" placeholder="Asunto">
-					<textarea cols="30" rows="4" placeholder="Mensaje"></textarea>
+					<input type="text" id="contact-asunto" placeholder="Asunto">
+					<textarea cols="30" id="contact-msg" rows="4" placeholder="Mensaje"></textarea>
 					<div class="form-submit">
 						<button class="submit">Enviar mensaje</button>
 						<span class="attach"><i class="fa fa-paperclip"></i>Agregar archivo</span>
@@ -95,6 +95,13 @@
 			<ul class="media"></ul>
 		</div>
 	</footer>
+
+	<div id="modal-confirm">
+		<div>
+			<i class="fa fa-times"></i>
+			<p><i class="fa fa-check"></i><br>Se ha enviado el mensaje de manera correcta.</p>
+		</div>
+	</div>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="../js/app.js"></script>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Gloria S.A.</title>
+	<link rel="stylesheet" href="../css/estilos.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:300,400,500" rel="stylesheet"> 
+</head>
+<body>
+	<header>
+		<div class="container header-top">
+			<a href="index.html"><img src="../assets/Logo.png" alt="Logo Gloria S.A." class="logo"></a>
+			<div class="search-media">
+				<ul class="media"></ul>
+				<div class="search">
+					<input type="text" placeholder="Buscar">
+					<span><i class="fa fa-search"></i></span>
+				</div>
+			</div>
+		</div>
+		<div class="menu-container">
+			<ul class="container menu"></ul>
+		</div>
+		<div class="breadcrumb">
+			<ul class="container">
+				<li><i class="fa fa-angle-right"></i><a href="">Inicio</a></li>
+			</ul>
+		</div>
+	</header>
+	<main id="index">
+		<div class="slider container">
+			<div class="slide slide1 slide-active"><img src="../assets/slide1.jpg" alt="Slide 1"></div>
+			<div class="slide slide2"><img src="../assets/slide2.jpg" alt="Slide 2"></div>
+			<div class="slide slide3"><img src="../assets/slide3.jpg" alt="Slide 3"></div>
+			<div class="handler-arrow">
+				<span class="arrow arrow-left"><i class="fa fa-chevron-left"></i></span>
+				<span class="arrow arrow-right"><i class="fa fa-chevron-right"></i></span>
+			</div>
+			<div class="handler-dot">
+				<span data-dot="1" class="dot dot1 dot-active"></span>
+				<span data-dot="2" class="dot dot2"></span>
+				<span data-dot="3" class="dot dot3"></span>
+			</div>
+		</div>
+		<div class="container body-home">
+			<form>
+				<h2>Bolet&iacute;n Informativo</h2>
+				<label class="lblInput"><input id="name" type="text" placeholder="Nombres *"></label>
+				<label class="lblInput"><input id="surname" type="text" placeholder="Apellidos *"></label>
+				<label class="lblInput"><input id="email" type="email" placeholder="Email *"></label>
+				<input type="checkbox">
+				<label class="check">
+					Deseo recibir informaci&oacute;n sobre productos, noticias y otras actualizaciones.
+				</label>
+				<button class="submit" type="" value="Suscribirme">Suscribirme</button>
+			</form>
+			<article>
+				<section class="variedad">
+					<img src="../assets/variedad.jpg" alt="Variedad de productos">
+					<div>
+						<h2>Variedad de productos</h2>
+						<p>La marca Gloria cuenta con una amplia variedad de productos de primera necesidad que satisface la demanda de nuestro público objetivo.</p>
+						<a href="../pages/productos.html">Ver productos</a>
+					</div>
+				</section>
+				<section class="noticias">
+					<img src="../assets/noticias.jpg" alt="Noticias importantes">
+					<div>
+						<h2>Noticias importantes</h2>
+						<p>La cuestionada empresa compartió con sus trabajadores los hashtag que deben usar para alentar a la campaña en redes sociales.</p>
+						<a href="../pages/blog.html">Ver noticias</a>
+					</div>
+				</section>
+			</article>
+		</div>
+	</main>
+	<footer>
+		<div class="container container-footer">
+			<div class="copyright">
+				<a href="index.html"><img src="assets/Logo-Gloria.png" alt="Logo Gloria footer"></a>
+				<div>
+					<p>Copyright &copy; Gloria S.A. Todos los Derechos Reservados</p>
+					<ul class="menu-footer"></ul>
+				</div>
+			</div>
+			<ul class="media"></ul>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="../js/app.js"></script>
+</body>
+</html>
